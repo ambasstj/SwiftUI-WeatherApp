@@ -11,6 +11,8 @@
 		ACADDCB72AF7DE1F00C45627 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADDCB62AF7DE1F00C45627 /* ContentView.swift */; };
 		ACADDCB92AF7DE2000C45627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACADDCB82AF7DE2000C45627 /* Assets.xcassets */; };
 		ACADDCBC2AF7DE2000C45627 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACADDCBB2AF7DE2000C45627 /* Preview Assets.xcassets */; };
+		ACADDCC32AF84AFE00C45627 /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADDCC22AF84AFE00C45627 /* WeatherButton.swift */; };
+		ACADDCC52AF87C8F00C45627 /* DaysofWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADDCC42AF87C8F00C45627 /* DaysofWeek.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		ACADDCB62AF7DE1F00C45627 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACADDCB82AF7DE2000C45627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACADDCBB2AF7DE2000C45627 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACADDCC22AF84AFE00C45627 /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
+		ACADDCC42AF87C8F00C45627 /* DaysofWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysofWeek.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				ACADDCB62AF7DE1F00C45627 /* ContentView.swift */,
 				ACADDCB82AF7DE2000C45627 /* Assets.xcassets */,
 				ACADDCBA2AF7DE2000C45627 /* Preview Content */,
+				ACADDCC22AF84AFE00C45627 /* WeatherButton.swift */,
+				ACADDCC42AF87C8F00C45627 /* DaysofWeek.swift */,
 			);
 			path = "SwiftUI-Weather";
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACADDCB72AF7DE1F00C45627 /* ContentView.swift in Sources */,
+				ACADDCC52AF87C8F00C45627 /* DaysofWeek.swift in Sources */,
 				ACADDCB52AF7DE1F00C45627 /* SwiftUI_WeatherApp.swift in Sources */,
+				ACADDCC32AF84AFE00C45627 /* WeatherButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
