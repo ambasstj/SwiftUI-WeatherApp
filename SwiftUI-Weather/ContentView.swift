@@ -43,7 +43,7 @@ struct ContentView: View {
 
 struct WeatherDayView: View {
     
-    var imageName =  "cloud.fill"
+    var imageName : String
     var temp: Int
     var todaysDate = Date()
     let Copy = DaysofWeek()
@@ -84,7 +84,7 @@ struct WeatherDayView: View {
 struct BackGroundView: View {
     var isNight: Bool
     var body: some View {
-        LinearGradient(colors: [isNight ? .gray: .customLightBlue, isNight ? .black: .teal, isNight ? .customDarkBlue: .customDarkBlue],
+        LinearGradient(colors: [isNight ? .gray: .customLightBlue, isNight ? .black: .teal, isNight ? .teal: .customDarkBlue],
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .ignoresSafeArea()
