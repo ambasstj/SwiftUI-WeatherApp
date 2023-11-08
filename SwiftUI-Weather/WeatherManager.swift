@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 protocol WeatherManagerDelegate {
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel, num: Int)
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
     func didFailWithError(error: Error)
 }
 
@@ -20,7 +20,6 @@ struct WeatherManager {
     
     func fetchWeather(cityName: String) {
         let urlString = "\(weatherURL)q=\(cityName)"
-        print("fetch weather is being called")
         performRequest(with: urlString)
     }
     
@@ -39,8 +38,7 @@ struct WeatherManager {
                 }
                 if let safeData = data {
                     if let parsedObject = self.parseJSON(safeData) {
-                        self.delegate?.didUpdateWeather(self, weather: parsedObject, num: 3)
-                        print("data was safely parsed \(parsedObject.temperature)")
+                        self.delegate?.didUpdateWeather(self, weather: parsedObject)
                     }
                 }
             }
@@ -56,8 +54,12 @@ struct WeatherManager {
             let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
             let name = decodedData.name
+            let lat = decodedData.coord.lat
+            let lon = decodedData.coord.lon
             
-            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
+            
+            
+            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp, lat: lat, lon: lon)
             return weather
             
         } catch {

@@ -29,14 +29,14 @@ struct ContentView: View {
             VStack{
                 
                 CurrentCityView(cityName: weatherObject?.cityName ?? "Tevin")
-                CurrentWeatherData(imageName: isNight ? "moon.stars.fill":  weatherObject?.conditionName ?? "", temp: 100)
+                CurrentWeatherData(imageName: isNight ? "moon.stars.fill":  weatherObject?.conditionName ?? "", temp: Int(weatherObject?.temperature ?? 0.0) )
                
                 HStack(spacing: 10){
-                    WeatherDayView(index: 0, temp: 69, imageName: "sun.horizon.fill")
-                    WeatherDayView(index: 1, temp: 70, imageName: "cloud.fill")
-                    WeatherDayView(index: 2, temp: 80, imageName: "sun.max.fill")
-                    WeatherDayView(index: 3, temp: 63)
-                    WeatherDayView(index: 4, temp: 101, imageName: "thermometer.sun.fill")
+                    WeatherDayView(index: 1, temp: 69, imageName: "sun.horizon.fill")
+                    WeatherDayView(index: 2, temp: 70, imageName: "cloud.fill")
+                    WeatherDayView(index: 3, temp: 80, imageName: "sun.max.fill")
+                    WeatherDayView(index: 4, temp: 63)
+                    WeatherDayView(index: 5, temp: 101, imageName: "thermometer.sun.fill")
                 }
                 Spacer()
                 WeatherButton(backgroundColor:isNight ? .black: .white, textColor:isNight ? .customLightBlue: .blue) {
@@ -136,16 +136,13 @@ struct CurrentWeatherData: View {
 
 
 extension ContentView: WeatherManagerDelegate{
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel, num: Int) {
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         
         DispatchQueue.main.async {
                 self.weatherObject = weather
-            print(weather.cityName)
-            
         }
                 }
        
-    
     func didFailWithError(error: Error) {
         print(error.localizedDescription)
     }
