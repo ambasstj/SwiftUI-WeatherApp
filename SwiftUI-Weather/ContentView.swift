@@ -9,15 +9,27 @@ import SwiftUI
 import Foundation
 
 struct ContentView: View {
+
+    
     @State private var isNight = false
+    @State private var weatherObject: WeatherModel?
+    @State var weatherManage = WeatherManager()
     let W = DaysofWeek()
+    
+    
     var body: some View {
         ZStack{
             BackGroundView(isNight: isNight)
             
+                 .onAppear {
+                    weatherManage.delegate = self
+                    weatherManage.fetchWeather(cityName: "Birmingham")
+                }
+    
             VStack{
-                CurrentCityView(cityName: "Birmingham, AL")
-               CurrentWeatherData(imageName: isNight ? "moon.stars.fill":  "sun.max.fill", temp: 81)
+                
+                CurrentCityView(cityName: weatherObject?.cityName ?? "Tevin")
+                CurrentWeatherData(imageName: isNight ? "moon.stars.fill":  weatherObject?.conditionName ?? "", temp: 100)
                
                 HStack(spacing: 10){
                     WeatherDayView(index: 0, temp: 69, imageName: "sun.horizon.fill")
@@ -29,6 +41,7 @@ struct ContentView: View {
                 Spacer()
                 WeatherButton(backgroundColor:isNight ? .black: .white, textColor:isNight ? .customLightBlue: .blue) {
                     self.isNight.toggle()
+                    
                 }
             
                 
@@ -93,7 +106,6 @@ struct BackGroundView: View {
 
 struct CurrentCityView: View {
     var cityName: String
-    
     var body: some View {
         Text(cityName)
             .font(.system(size: 31.0))
@@ -102,7 +114,6 @@ struct CurrentCityView: View {
     }
 }
 struct CurrentWeatherData: View {
-    
     var imageName: String
     var temp: Int
     var body: some View {
@@ -124,3 +135,21 @@ struct CurrentWeatherData: View {
 }
 
 
+extension ContentView: WeatherManagerDelegate{
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel, num: Int) {
+        
+        DispatchQueue.main.async {
+                self.weatherObject = weather
+            print(weather.cityName)
+            
+        }
+                }
+       
+    
+    func didFailWithError(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
+    
+}
