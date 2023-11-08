@@ -17,8 +17,6 @@ struct WeatherButton: View {
         Button("Change Day/Night") {
             action()
         }
-           
-        
         .frame(width:300, height:50)
         .foregroundStyle(textColor)
         .background(backgroundColor.gradient)

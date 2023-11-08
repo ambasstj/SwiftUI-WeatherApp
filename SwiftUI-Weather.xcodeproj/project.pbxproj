@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC22321E2AFAEB3600775B05 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC22321D2AFAEB3600775B05 /* WeatherManager.swift */; };
+		AC2232202AFAEB8200775B05 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC22321F2AFAEB8200775B05 /* WeatherData.swift */; };
+		AC2232222AFAEBFA00775B05 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2232212AFAEBFA00775B05 /* WeatherModel.swift */; };
 		ACADDCB52AF7DE1F00C45627 /* SwiftUI_WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADDCB42AF7DE1F00C45627 /* SwiftUI_WeatherApp.swift */; };
 		ACADDCB72AF7DE1F00C45627 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACADDCB62AF7DE1F00C45627 /* ContentView.swift */; };
 		ACADDCB92AF7DE2000C45627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACADDCB82AF7DE2000C45627 /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC22321D2AFAEB3600775B05 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		AC22321F2AFAEB8200775B05 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		AC2232212AFAEBFA00775B05 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		ACADDCB12AF7DE1F00C45627 /* SwiftUI-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACADDCB42AF7DE1F00C45627 /* SwiftUI_WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_WeatherApp.swift; sourceTree = "<group>"; };
 		ACADDCB62AF7DE1F00C45627 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +67,9 @@
 				ACADDCBA2AF7DE2000C45627 /* Preview Content */,
 				ACADDCC22AF84AFE00C45627 /* WeatherButton.swift */,
 				ACADDCC42AF87C8F00C45627 /* DaysofWeek.swift */,
+				AC22321D2AFAEB3600775B05 /* WeatherManager.swift */,
+				AC22321F2AFAEB8200775B05 /* WeatherData.swift */,
+				AC2232212AFAEBFA00775B05 /* WeatherModel.swift */,
 			);
 			path = "SwiftUI-Weather";
 			sourceTree = "<group>";
@@ -145,7 +154,10 @@
 			files = (
 				ACADDCB72AF7DE1F00C45627 /* ContentView.swift in Sources */,
 				ACADDCC52AF87C8F00C45627 /* DaysofWeek.swift in Sources */,
+				AC22321E2AFAEB3600775B05 /* WeatherManager.swift in Sources */,
+				AC2232222AFAEBFA00775B05 /* WeatherModel.swift in Sources */,
 				ACADDCB52AF7DE1F00C45627 /* SwiftUI_WeatherApp.swift in Sources */,
+				AC2232202AFAEB8200775B05 /* WeatherData.swift in Sources */,
 				ACADDCC32AF84AFE00C45627 /* WeatherButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
