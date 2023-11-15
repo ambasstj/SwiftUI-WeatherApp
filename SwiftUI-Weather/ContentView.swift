@@ -20,23 +20,21 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             BackGroundView(isNight: isNight)
-            
                  .onAppear {
                     weatherManage.delegate = self
-                    weatherManage.fetchWeather(cityName: "Birmingham")
+                    weatherManage.fetchWeather(cityName: "Gaza")
                 }
-    
             VStack{
                 
                 CurrentCityView(cityName: weatherObject?.cityName ?? "Tevin")
                 CurrentWeatherData(imageName: isNight ? "moon.stars.fill":  weatherObject?.conditionName ?? "", temp: Int(weatherObject?.temperature ?? 0.0) )
                
                 HStack(spacing: 10){
-                    WeatherDayView(index: 1, temp: 69, imageName: "sun.horizon.fill")
-                    WeatherDayView(index: 2, temp: 70, imageName: "cloud.fill")
-                    WeatherDayView(index: 3, temp: 80, imageName: "sun.max.fill")
-                    WeatherDayView(index: 4, temp: 63)
-                    WeatherDayView(index: 5, temp: 101, imageName: "thermometer.sun.fill")
+                    WeatherDayView(index: 1, temp: Int.random(in: 50..<99), imageName: "sun.horizon.fill")
+                    WeatherDayView(index: 2, temp: Int.random(in: 50..<99), imageName: "cloud.fill")
+                    WeatherDayView(index: 3, temp: Int.random(in: 50..<99), imageName: "sun.max.fill")
+                    WeatherDayView(index: 4, temp: Int.random(in: 50..<99))
+                    WeatherDayView(index: 5, temp: Int.random(in: 50..<99), imageName: "thermometer.sun.fill")
                 }
                 Spacer()
                 WeatherButton(backgroundColor:isNight ? .black: .white, textColor:isNight ? .customLightBlue: .blue) {
