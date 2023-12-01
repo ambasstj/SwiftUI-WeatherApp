@@ -22,7 +22,7 @@ struct ContentView: View {
             BackGroundView(isNight: isNight)
                  .onAppear {
                     weatherManage.delegate = self
-                    weatherManage.fetchWeather(cityName: "Gaza")
+                    weatherManage.fetchWeather(cityName: "Hoover")
                 }
             VStack{
                 
