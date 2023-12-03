@@ -136,7 +136,9 @@ struct CurrentWeatherData: View {
 extension ContentView: WeatherManagerDelegate{
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         
+        weatherManager.fetchWeather(latitude: weather.lat, longitude: weather.lon)
         DispatchQueue.main.async {
+            
                 self.weatherObject = weather
         }
                 }
